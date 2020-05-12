@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="tox.h" />
+    <ClInclude Include="tox_private.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="ccompat.h" />
+    <ClInclude Include="crypto_core.api.h" />
+    <ClInclude Include="crypto_core.h" />
+    <ClInclude Include="DHT.h" />
+    <ClInclude Include="friend_connection.h" />
+    <ClInclude Include="friend_requests.h" />
+    <ClInclude Include="group.h" />
+    <ClInclude Include="LAN_discovery.api.h" />
+    <ClInclude Include="LAN_discovery.h" />
+    <ClInclude Include="list.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="Messenger.h" />
+    <ClInclude Include="mono_time.h" />
+    <ClInclude Include="net_crypto.h" />
+    <ClInclude Include="network.h" />
+    <ClInclude Include="onion.h" />
+    <ClInclude Include="onion_announce.h" />
+    <ClInclude Include="onion_client.h" />
+    <ClInclude Include="ping.api.h" />
+    <ClInclude Include="ping.h" />
+    <ClInclude Include="ping_array.api.h" />
+    <ClInclude Include="ping_array.h" />
+    <ClInclude Include="state.h" />
+    <ClInclude Include="TCP_client.h" />
+    <ClInclude Include="TCP_connection.h" />
+    <ClInclude Include="TCP_server.h" />
+    <ClInclude Include="tox.api.h" />
+    <ClInclude Include="..\toxencryptsave\toxencryptsave.h" />
+    <ClInclude Include="..\toxencryptsave\toxencryptsave.api.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="crypto_core.c" />
+    <ClCompile Include="crypto_core_mem.c" />
+    <ClCompile Include="DHT.c" />
+    <ClCompile Include="friend_connection.c" />
+    <ClCompile Include="friend_requests.c" />
+    <ClCompile Include="group.c" />
+    <ClCompile Include="LAN_discovery.c" />
+    <ClCompile Include="list.c" />
+    <ClCompile Include="logger.c" />
+    <ClCompile Include="Messenger.c" />
+    <ClCompile Include="mono_time.c" />
+    <ClCompile Include="net_crypto.c" />
+    <ClCompile Include="network.c" />
+    <ClCompile Include="onion.c" />
+    <ClCompile Include="onion_announce.c" />
+    <ClCompile Include="onion_client.c" />
+    <ClCompile Include="ping.c" />
+    <ClCompile Include="ping_array.c" />
+    <ClCompile Include="state.c" />
+    <ClCompile Include="TCP_client.c" />
+    <ClCompile Include="TCP_connection.c" />
+    <ClCompile Include="TCP_server.c" />
+    <ClCompile Include="tox.c" />
+    <ClCompile Include="tox_api.c" />
+    <ClCompile Include="util.c" />
+    <ClCompile Include="..\toxencryptsave\toxencryptsave.c" />
+  </ItemGroup>
+</Project>
