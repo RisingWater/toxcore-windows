@@ -6,8 +6,6 @@
 #define _XOPEN_SOURCE 600
 #endif
 
-#include <time.h>
-
 #if !defined(OS_WIN32) && (defined(_WIN32) || defined(__WIN32__) || defined(WIN32))
 #define OS_WIN32
 #define WIN32_LEAN_AND_MEAN
@@ -27,7 +25,7 @@
 
 #include <pthread.h>
 #include <stdlib.h>
-
+#include <time.h>
 
 #include "ccompat.h"
 

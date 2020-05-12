@@ -10,18 +10,6 @@
 #include "config.h"
 #endif
 
-#if defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
-
-// The mingw32/64 Windows library warns about including winsock2.h after
-// windows.h even though with the above it's a valid thing to do. So, to make
-// mingw32 headers happy, we include winsock2.h first.
-#include <winsock2.h>
-#include <ws2tcpip.h>
-#include <iphlpapi.h>
-#include <windows.h>
-
-#endif
-
 #include "LAN_discovery.h"
 
 #include <string.h>
@@ -41,6 +29,15 @@ static IP_Port broadcast_ip_ports[MAX_INTERFACES];
 
 #if defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
 
+// The mingw32/64 Windows library warns about including winsock2.h after
+// windows.h even though with the above it's a valid thing to do. So, to make
+// mingw32 headers happy, we include winsock2.h first.
+#include <winsock2.h>
+
+#include <windows.h>
+#include <ws2tcpip.h>
+
+#include <iphlpapi.h>
 
 static void fetch_broadcast_info(uint16_t port)
 {
@@ -73,16 +70,14 @@ static void fetch_broadcast_info(uint16_t port)
         IP_ADAPTER_INFO *pAdapter = pAdapterInfo;
 
         while (pAdapter) {
-            IP gateway = {0};
-            IP subnet_mask = {0};
+            IP gateway = {0}, subnet_mask = {0};
 
             if (addr_parse_ip(pAdapter->IpAddressList.IpMask.String, &subnet_mask)
                     && addr_parse_ip(pAdapter->GatewayList.IpAddress.String, &gateway)) {
                 if (net_family_is_ipv4(gateway.family) && net_family_is_ipv4(subnet_mask.family)) {
                     IP_Port *ip_port = &ip_ports[count];
                     ip_port->ip.family = net_family_ipv4;
-                    uint32_t gateway_ip = net_ntohl(gateway.ip.v4.uint32);
-                    uint32_t subnet_ip = net_ntohl(subnet_mask.ip.v4.uint32);
+                    uint32_t gateway_ip = net_ntohl(gateway.ip.v4.uint32), subnet_ip = net_ntohl(subnet_mask.ip.v4.uint32);
                     uint32_t broadcast_ip = gateway_ip + ~subnet_ip - 1;
                     ip_port->ip.ip.v4.uint32 = net_htonl(broadcast_ip);
                     ip_port->port = port;

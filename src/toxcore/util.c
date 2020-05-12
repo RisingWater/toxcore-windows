@@ -14,14 +14,14 @@
 #ifndef _XOPEN_SOURCE
 #define _XOPEN_SOURCE 600
 #endif
-#include <time.h>
+
 #include "util.h"
+
+#include "crypto_core.h" /* for CRYPTO_PUBLIC_KEY_SIZE */
 
 #include <stdlib.h>
 #include <string.h>
-
-
-#include "crypto_core.h" /* for CRYPTO_PUBLIC_KEY_SIZE */
+#include <time.h>
 
 
 /* id functions */
