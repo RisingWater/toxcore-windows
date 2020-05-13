@@ -14,7 +14,7 @@
 #include "ccompat.h"
 
 #ifndef MIN_LOGGER_LEVEL
-#define MIN_LOGGER_LEVEL LOGGER_LEVEL_INFO
+#define MIN_LOGGER_LEVEL LOGGER_LEVEL_TRACE
 #endif
 
 // NOTE: Don't forget to update build system files after modifying the enum.

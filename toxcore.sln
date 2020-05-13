@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "toxcore_shared", "src\toxcore\toxcore_shared.vcxproj", "{CDA75739-9539-3EAE-B49F-5E0CE35903B2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "toxcore", "src\toxcore\toxcore.vcxproj", "{CDA75739-9539-3EAE-B49F-5E0CE35903B2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "toxcore_static", "src\toxcore\toxcore_static.vcxproj", "{010D8725-8925-3703-BC96-332583909439}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "toxtest", "src\toxtest\toxtest.vcxproj", "{1BEB0FD5-BFE9-43E5-B5C7-98219DCAE8D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,8 +16,10 @@ Global
 		{CDA75739-9539-3EAE-B49F-5E0CE35903B2}.Debug|Win32.Build.0 = Debug|Win32
 		{CDA75739-9539-3EAE-B49F-5E0CE35903B2}.Release|Win32.ActiveCfg = Release|Win32
 		{CDA75739-9539-3EAE-B49F-5E0CE35903B2}.Release|Win32.Build.0 = Release|Win32
-		{010D8725-8925-3703-BC96-332583909439}.Debug|Win32.ActiveCfg = Release|Win32
-		{010D8725-8925-3703-BC96-332583909439}.Release|Win32.ActiveCfg = Release|Win32
+		{1BEB0FD5-BFE9-43E5-B5C7-98219DCAE8D8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1BEB0FD5-BFE9-43E5-B5C7-98219DCAE8D8}.Debug|Win32.Build.0 = Debug|Win32
+		{1BEB0FD5-BFE9-43E5-B5C7-98219DCAE8D8}.Release|Win32.ActiveCfg = Release|Win32
+		{1BEB0FD5-BFE9-43E5-B5C7-98219DCAE8D8}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
