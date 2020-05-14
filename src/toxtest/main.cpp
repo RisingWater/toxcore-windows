@@ -154,13 +154,14 @@ int main(int argc, char** argv)
     {
         tox_options.log_callback = on_tox_log;
     }
-   /* save_size = load_save(&save_data);
+
+    save_size = load_save(&save_data);
     if (save_data && save_size)
     {
         tox_options.savedata_type = TOX_SAVEDATA_TYPE_TOX_SAVE;
         tox_options.savedata_data = save_data;
         tox_options.savedata_length = save_size;
-    }*/
+    }
 
     Tox *tox = tox_new(&tox_options, &err_new);
     if (err_new != TOX_ERR_NEW_OK) {
@@ -171,7 +172,7 @@ int main(int argc, char** argv)
     tox_callback_friend_request(tox, handle_friend_request);
     tox_callback_friend_message(tox, handle_friend_message);
 
-    //write_save(tox);
+    write_save(tox);
 
     set_tox_username(tox);
     tox_self_get_address(tox, (uint8_t*)tox_id);
